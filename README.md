@@ -20,15 +20,15 @@
 
 ## 🕹️ El Archivo de Juegos (Cronología)
 
-| Año | Juego | Motor / Stack | Descripción y Mecánicas | Demos y Recursos |
-| :---: | :--- | :--- | :--- | :---: |
-| **2015** | **[Animal Sounds](./animal-sounds/)** | Android Nativo (Java / Eclipse) | Mi primer juego táctil interactivo para Android: pulsadores sonoros, catálogo de animales y menús móviles. | [APK Demo](./animal-sounds/Apks%20Demo/AnimalSounds.apk) |
-| **2015** | **[Lights Out](./lights-out/)** | Android Nativo (Java / Eclipse) | Adaptación del clásico puzzle de lógica matricial. Multilenguaje (Español/Inglés) con control táctil por casillas. | [APK Demo](./lights-out/Apk%20Demo/LightOut.apk) |
-| **2015** | **[Destroy-All](./destroy-all/)** | AndEngine GLES2 (Android) | Arcade 2D de destrucción y física básica. Primeras aproximaciones a un motor de renderizado de videojuegos 2D para móviles. | [APK Demo](./destroy-all/Apks%20Demo/DestruyeTodo.apk) |
-| **2015** | **[Run-Or-Die](./run-or-die/)** | AndEngine GLES2 (Android) | Endless runner de reflejos y agilidad: salto de obstáculos, bucle de juego continuo y aceleración progresiva. | [APK Demo](./run-or-die/Apk%20Demo/RunOrDie.apk) |
-| **2015** | **[Random](./random/)** | Apache Cordova / PhoneGap | Juego experimental híbrido desarrollado con tecnologías web empaquetadas para Android. | [APK Demo](./random/Apk%20Demo/aleatorio.apk) |
-| **2015** | **[Visual Adventure](./visual-adventure/)** | Android Nativo (Java) | Motor propio para novelas visuales y aventuras conversacionales: gestión de inventario, mapa de localizaciones, sistema de actores y diálogos ramificados. | [Screenshots](./visual-adventure/Screenshot/) |
-| **2016** | **[VikingRitual](./viking-ritual/)** | Unity 5 (C# / 3D) | Proyecto 3D desarrollado en una Game Jam (Global Game Jam 2016). Modelos 3D, controladores de animación y mecánicas temáticas vikingas. | [Código Unity](./viking-ritual/) |
+|   Año    | Juego                                       | Motor / Stack                   | Descripción y Mecánicas                                                                                                                                    |                     Demos y Recursos                     |
+| :------: | :------------------------------------------ | :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------: |
+| **2015** | **[Animal Sounds](./animal-sounds/)**       | Android Nativo (Java / Eclipse) | Mi primer juego táctil interactivo para Android: pulsadores sonoros, catálogo de animales y menús móviles.                                                 | [APK Demo](./animal-sounds/Apks%20Demo/AnimalSounds.apk) |
+| **2015** | **[Lights Out](./lights-out/)**             | Android Nativo (Java / Eclipse) | Adaptación del clásico puzzle de lógica matricial. Multilenguaje (Español/Inglés) con control táctil por casillas.                                         |     [APK Demo](./lights-out/Apk%20Demo/LightOut.apk)     |
+| **2015** | **[Destroy-All](./destroy-all/)**           | AndEngine GLES2 (Android)       | Arcade 2D de destrucción y física básica. Primeras aproximaciones a un motor de renderizado de videojuegos 2D para móviles.                                |  [APK Demo](./destroy-all/Apks%20Demo/DestruyeTodo.apk)  |
+| **2015** | **[Run-Or-Die](./run-or-die/)**             | AndEngine GLES2 (Android)       | Endless runner de reflejos y agilidad: salto de obstáculos, bucle de juego continuo y aceleración progresiva.                                              |     [APK Demo](./run-or-die/Apk%20Demo/RunOrDie.apk)     |
+| **2015** | **[Random](./random/)**                     | Apache Cordova / PhoneGap       | Juego experimental híbrido desarrollado con tecnologías web empaquetadas para Android.                                                                     |      [APK Demo](./random/Apk%20Demo/aleatorio.apk)       |
+| **2015** | **[Visual Adventure](./visual-adventure/)** | Android Nativo (Java)           | Motor propio para novelas visuales y aventuras conversacionales: gestión de inventario, mapa de localizaciones, sistema de actores y diálogos ramificados. |      [Screenshots](./visual-adventure/Screenshot/)       |
+| **2016** | **[VikingRitual](./viking-ritual/)**        | Unity 5 (C# / 3D)               | Proyecto 3D desarrollado en una Game Jam (Global Game Jam 2016). Modelos 3D, controladores de animación y mecánicas temáticas vikingas.                    |             [Código Unity](./viking-ritual/)             |
 
 ---
 

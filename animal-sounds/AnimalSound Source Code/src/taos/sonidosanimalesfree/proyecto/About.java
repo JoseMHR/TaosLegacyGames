@@ -47,7 +47,7 @@ public class About extends Activity {
 
 	public void onEmail(View view) {
 		Toast toast = Toast.makeText(getApplicationContext(),
-				"taosworldgames@gmail.com", Toast.LENGTH_SHORT);
+				"contact@taosgames.com", Toast.LENGTH_SHORT);
 		toast.show();
 	}
 
