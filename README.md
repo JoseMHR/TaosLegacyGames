@@ -5,7 +5,7 @@
 
 [![Commits desde 2015](https://img.shields.io/badge/History-Preserved%20since%202015-amber?style=for-the-badge&logo=git)](https://github.com/JoseMHR/TaosLegacyGames/commits/main)
 [![GitHub Pages](https://img.shields.io/badge/Interactive%20Museum-Live%20Demo-22c55e?style=for-the-badge&logo=github)](https://josemhr.github.io/TaosLegacyGames/)
-[![Evolution](https://img.shields.io/badge/Current%20Flagship-TaosGameMaker%20(Godot%204)-6366f1?style=for-the-badge&logo=godotengine)](https://github.com/JoseMHR/taos-game-maker)
+[![Evolution](https://img.shields.io/badge/Current%20Flagship-TaosGameMaker%20(Godot%204)-6366f1?style=for-the-badge&logo=godotengine)](https://github.com/JoseMHR/TaosGameMaker)
 
 ---
 
@@ -36,7 +36,7 @@
 
 El camino iniciado en estos 7 proyectos condujo a lo largo de más de una década de experiencia al desarrollo de mi proyecto más ambicioso:
 
-👉 **[TaosGameMaker (Godot 4.3)](https://github.com/JoseMHR/taos-game-maker)**: Un motor y suite completa para crear JRPGs profesionales en PC y Android, con editores visuales, sistema de bases de datos por JSON, combate por turnos y arquitectura modular.
+👉 **[TaosGameMaker (Godot 4.3)](https://github.com/JoseMHR/TaosGameMaker)**: Un motor y suite completa para crear JRPGs profesionales en PC y Android, con editores visuales, sistema de bases de datos por JSON, combate por turnos y arquitectura modular.
 
 ---
 
