@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taos Legacy Games | Cápsula del Tiempo (2014-2016)</title>
+  <meta name="description" content="Museo y archivo histórico de los primeros proyectos de videojuegos de Jose Manuel (Taos).">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            retro: {
+              amber: '#f59e0b',
+              purple: '#a855f7',
+              cyan: '#06b6d4',
+              emerald: '#10b981'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Retro CRT and Neon Glow Styling */
+    .bg-grid-dots {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .retro-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .retro-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.2);
+    }
+
+    .badge-year {
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-black relative overflow-x-hidden">
+
+  <!-- Background decorative glows -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-grid-dots"></div>
+    <div class="absolute -top-40 left-1/4 w-[600px] h-[400px] bg-amber-600/15 blur-[140px] rounded-full"></div>
+    <div class="absolute top-1/2 -right-20 w-[550px] h-[500px] bg-purple-600/15 blur-[150px] rounded-full"></div>
+    <div class="absolute bottom-0 left-10 w-[500px] h-[400px] bg-cyan-600/15 blur-[140px] rounded-full"></div>
+  </div>
+
+  <!-- Historical Badge Banner -->
+  <div class="bg-gradient-to-r from-amber-500/15 via-purple-500/15 to-amber-500/15 border-b border-amber-500/25 px-4 py-3 text-center text-xs md:text-sm text-amber-200">
+    <div class="max-w-5xl mx-auto flex items-center justify-center gap-2">
+      <span class="text-base">🏛️</span>
+      <p>
+        <span class="font-bold text-amber-300">Cápsula del Tiempo:</span> 
+        Este archivo preserva <strong>107 commits originales desde febrero de 2015</strong>. Refleja mis inicios en el desarrollo de videojuegos hace más de una década.
+      </p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="max-w-6xl w-full mx-auto px-6 pt-12 pb-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 via-orange-500 to-purple-600 p-[2px] shadow-lg shadow-amber-500/20">
+          <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-3xl">
+            🕹️
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-3">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white font-display">
+              Taos Legacy Games
+            </h1>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+              2014 – 2016
+            </span>
+          </div>
+          <p class="text-slate-400 text-sm mt-1">
+            Museo interactivo y código fuente original: AndEngine GLES2, Android KitKat/Lollipop, Eclipse y Unity 5.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs">
+        <a href="https://github.com/JoseMHR/TaosLegacyGames" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>Ver en GitHub</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex items-center gap-2 mt-6 overflow-x-auto pb-2 scrollbar-none" id="filter-container">
+      <button onclick="filterGames('all')" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-amber-500 text-slate-950 shadow-sm transition">
+        Todos (7)
+      </button>
+      <button onclick="filterGames('2015')" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">
+        2015: Era Móvil (6)
+      </button>
+      <button onclick="filterGames('2016')" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">
+        2016: Game Jam 3D (1)
+      </button>
+      <button onclick="filterGames('andengine')" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition">
+        AndEngine
+      </button>
+    </div>
+  </header>
+
+  <!-- Games Grid -->
+  <main class="max-w-6xl w-full mx-auto px-6 py-6 flex-1">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="games-grid">
+
+      <!-- 1. Animal Sounds -->
+      <div class="game-card retro-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-year="2015" data-engine="native">
+        <div>
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./animal-sounds/Screenshot/1.png" alt="Animal Sounds" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+            <span class="badge-year absolute top-3 right-3 px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold">
+              Feb 2015
+            </span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Android Nativo (Java)</span>
+            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-amber-300 transition">Animal Sounds</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Primer juego interactivo para Android: selector sonoro con catálogo de animales, paneles táctiles y menú principal.
+            </p>
+          </div>
+        </div>
+
+        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/80 text-xs">
+          <a href="./animal-sounds/Apks Demo/AnimalSounds.apk" class="inline-flex items-center gap-1.5 font-bold text-amber-400 hover:text-amber-300 transition">
+            <i data-lucide="download" class="w-4 h-4"></i> Descargar APK
+          </a>
+          <a href="./animal-sounds/" class="text-slate-400 hover:text-white transition">
+            Código fuente →
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Destroy-All -->
+      <div class="game-card retro-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-year="2015" data-engine="andengine">
+        <div>
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./destroy-all/Screenshot/a1.png" alt="Destroy All" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+            <span class="badge-year absolute top-3 right-3 px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold">
+              Feb 2015
+            </span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-rose-400">AndEngine GLES2</span>
+            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-rose-300 transition">Destroy-All</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Arcade 2D de destrucción táctil con AndEngine: físicas básicas, gestión de sprites y partículas en pantalla.
+            </p>
+          </div>
+        </div>
+
+        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/80 text-xs">
+          <a href="./destroy-all/Apks Demo/DestruyeTodo.apk" class="inline-flex items-center gap-1.5 font-bold text-rose-400 hover:text-rose-300 transition">
+            <i data-lucide="download" class="w-4 h-4"></i> Descargar APK
+          </a>
+          <a href="./destroy-all/" class="text-slate-400 hover:text-white transition">
+            Código fuente →
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Lights Out -->
+      <div class="game-card retro-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-year="2015" data-engine="native">
+        <div>
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./lights-out/Screenshot/1.png" alt="Lights Out" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+            <span class="badge-year absolute top-3 right-3 px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold">
+              Feb 2015
+            </span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Puzzle Matricial</span>
+            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-cyan-300 transition">Lights Out</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Versión móvil del mítico rompecabezas de luces con lógica booleana por cuadrículas y soporte bilingüe (ES / EN).
+            </p>
+          </div>
+        </div>
+
+        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/80 text-xs">
+          <a href="./lights-out/Apk Demo/LightOut.apk" class="inline-flex items-center gap-1.5 font-bold text-cyan-400 hover:text-cyan-300 transition">
+            <i data-lucide="download" class="w-4 h-4"></i> Descargar APK
+          </a>
+          <a href="./lights-out/" class="text-slate-400 hover:text-white transition">
+            Código fuente →
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Run-Or-Die -->
+      <div class="game-card retro-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-year="2015" data-engine="andengine">
+        <div>
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./run-or-die/Screenshot/1.png" alt="Run Or Die" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+            <span class="badge-year absolute top-3 right-3 px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold">
+              Feb 2015
+            </span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">AndEngine GLES2</span>
+            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-emerald-300 transition">Run-Or-Die</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Endless runner con saltos y obstáculos dinámicos, scroll infinito y curva de dificultad progresiva.
+            </p>
+          </div>
+        </div>
+
+        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/80 text-xs">
+          <a href="./run-or-die/Apk Demo/RunOrDie.apk" class="inline-flex items-center gap-1.5 font-bold text-emerald-400 hover:text-emerald-300 transition">
+            <i data-lucide="download" class="w-4 h-4"></i> Descargar APK
+          </a>
+          <a href="./run-or-die/" class="text-slate-400 hover:text-white transition">
+            Código fuente →
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Random -->
+      <div class="game-card retro-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-year="2015" data-engine="cordova">
+        <div>
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./random/Screenshot/1.png" alt="Random Game" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+            <span class="badge-year absolute top-3 right-3 px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold">
+              Feb 2015
+            </span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">Apache Cordova</span>
+            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-purple-300 transition">Random</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Juego experimental con tecnologías web móviles (HTML5/JS) empaquetadas como APK nativo mediante PhoneGap/Cordova.
+            </p>
+          </div>
+        </div>
+
+        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/80 text-xs">
+          <a href="./random/Apk Demo/aleatorio.apk" class="inline-flex items-center gap-1.5 font-bold text-purple-400 hover:text-purple-300 transition">
+            <i data-lucide="download" class="w-4 h-4"></i> Descargar APK
+          </a>
+          <a href="./random/" class="text-slate-400 hover:text-white transition">
+            Código fuente →
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Visual Adventure -->
+      <div class="game-card retro-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-year="2015" data-engine="native">
+        <div>
+          <div class="h-48 overflow-hidden bg-slate-900 relative">
+            <img src="./visual-adventure/Screenshot/Spanish Version/MainMenu.png" alt="Visual Adventure" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+            <span class="badge-year absolute top-3 right-3 px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-amber-400 border border-amber-500/30 text-xs font-bold">
+              Mar 2015
+            </span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Aventura Gráfica</span>
+            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-indigo-300 transition">Visual Adventure</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Motor propio para novelas interactivas: árbol de actores, inventario, mapa interactivo y diálogos ramificados.
+            </p>
+          </div>
+        </div>
+
+        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/80 text-xs">
+          <a href="./visual-adventure/Screenshot/" class="inline-flex items-center gap-1.5 font-bold text-indigo-400 hover:text-indigo-300 transition">
+            <i data-lucide="image" class="w-4 h-4"></i> Galería Screenshots
+          </a>
+          <a href="./visual-adventure/" class="text-slate-400 hover:text-white transition">
+            Código fuente →
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. VikingRitual (Unity 3D) -->
+      <div class="game-card retro-card rounded-2xl overflow-hidden flex flex-col justify-between group" data-year="2016" data-engine="unity">
+        <div>
+          <div class="h-48 bg-gradient-to-tr from-slate-900 via-indigo-950 to-slate-900 relative flex items-center justify-center p-6 border-b border-slate-800">
+            <span class="text-6xl group-hover:scale-110 transition duration-300">⚔️</span>
+            <span class="badge-year absolute top-3 right-3 px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-purple-400 border border-purple-500/30 text-xs font-bold">
+              Ene 2016
+            </span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">Unity 5 (C# / 3D)</span>
+            <h3 class="text-xl font-bold text-white mt-1 group-hover:text-purple-300 transition">VikingRitual</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Videojuego 3D creado para una Game Jam (Global Game Jam 2016): físicas en Unity, animadores Mecanim y temática ritual vikinga.
+            </p>
+          </div>
+        </div>
+
+        <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/80 text-xs">
+          <span class="text-slate-500 font-mono">Global Game Jam 2016</span>
+          <a href="./viking-ritual/" class="text-purple-400 hover:text-purple-300 font-bold transition">
+            Assets & Scripts →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Evolution Flagship Banner -->
+    <div class="mt-14 rounded-3xl p-8 bg-gradient-to-r from-indigo-950/80 via-slate-900/90 to-purple-950/80 border border-indigo-500/30 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-indigo-500/10 blur-[90px] rounded-full pointer-events-none"></div>
+
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+        <div>
+          <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> El Salto Cuántico (2015 ➔ Presente)
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-2 font-display">
+            TaosGameMaker (Godot 4.3 Engine)
+          </h2>
+          <p class="text-slate-300 text-sm mt-2 max-w-2xl leading-relaxed">
+            De aquellos primeros experimentos móviles nació la experiencia para construir un motor de videojuegos completo para JRPGs profesionales en PC y Android.
+          </p>
+        </div>
+
+        <a href="https://github.com/JoseMHR/taos-game-maker" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 transition hover:scale-105 shrink-0">
+          <span>Ver Motor en Godot 4</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-900 bg-slate-950/90 py-8 px-6 mt-12 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2015 – 2026 Jose Manuel Heredia (Taos). Archivo histórico de gamedev.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/JoseMHR" target="_blank" class="hover:text-slate-300 transition">Perfil de GitHub</a>
+        <span>•</span>
+        <a href="https://github.com/JoseMHR/TaosPersonal" class="hover:text-slate-300 transition">TaosPersonal</a>
+        <span>•</span>
+        <a href="https://github.com/JoseMHR/taos-game-maker" class="hover:text-slate-300 transition">TaosGameMaker</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function filterGames(filter) {
+      const cards = document.querySelectorAll('.game-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-slate-950');
+        btn.classList.add('bg-slate-900', 'border', 'border-slate-800', 'text-slate-300');
+      });
+
+      event.target.classList.remove('bg-slate-900', 'border', 'border-slate-800', 'text-slate-300');
+      event.target.classList.add('bg-amber-500', 'text-slate-950');
+
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.classList.remove('hidden');
+        } else if (filter === '2015' && card.dataset.year === '2015') {
+          card.classList.remove('hidden');
+        } else if (filter === '2016' && card.dataset.year === '2016') {
+          card.classList.remove('hidden');
+        } else if (filter === 'andengine' && card.dataset.engine === 'andengine') {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
