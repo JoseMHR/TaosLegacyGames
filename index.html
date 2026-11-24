@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taos Legacy Games | Cápsula del Tiempo (2014-2016)</title>
-  <meta name="description" content="Museo y archivo histórico de los primeros proyectos de videojuegos de Jose Manuel (Taos).">
+  <title>Taos Legacy Games | Time Capsule & Historical Archive (2014-2016)</title>
+  <meta name="description" content="Interactive time capsule and historical source code archive of Jose Manuel's (Taos) earliest game development projects (2014–2016).">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
   
   <!-- Tailwind CSS -->
@@ -136,18 +136,18 @@
   </div>
 
   <!-- Historical Badge Banner (Cyan / Blue Gradient) -->
-  <div class="bg-gradient-to-r from-blue-950/40 via-cyan-900/30 to-blue-950/40 border-b border-cyan-500/25 px-4 py-3 text-center text-xs md:text-sm text-cyan-200">
+  <div class="bg-gradient-to-r from-blue-950/50 via-cyan-900/35 to-blue-950/50 border-b border-cyan-500/30 px-4 py-3 text-center text-xs md:text-sm text-cyan-200">
     <div class="max-w-5xl mx-auto flex items-center justify-center gap-2">
       <span class="text-base animate-pulse">🏛️</span>
-      <p>
-        <span class="font-bold text-cyan-300">Cápsula del Tiempo:</span> 
-        Este archivo preserva <strong>108 commits originales desde febrero de 2015</strong>. Refleja mis inicios en el desarrollo de videojuegos hace más de una década.
+      <p id="top-banner-text">
+        <span class="font-bold text-cyan-300">Cápsula del Tiempo & Archivo Histórico:</span> 
+        Este repositorio preserva el código fuente original de mis primeros proyectos y experimentos con videojuegos hace más de una década (2014–2016). Es código antiguo y obsoleto, conservado por mero valor nostálgico para no borrar mis orígenes y recordar dónde empezó todo.
       </p>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="max-w-6xl w-full mx-auto px-6 pt-12 pb-8">
+  <header class="max-w-6xl w-full mx-auto px-6 pt-10 pb-8">
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-800/80">
       <div class="flex items-center gap-4">
         <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 via-cyan-500 to-indigo-600 p-[2px] shadow-lg shadow-cyan-500/25">
@@ -159,39 +159,49 @@
           <div class="flex items-center gap-3">
             <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white font-display flex items-center gap-2.5">
               Taos Legacy Games
-              <span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" title="Archivo activo"></span>
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" title="Archivo histórico activo"></span>
             </h1>
             <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
               2014 – 2016
             </span>
           </div>
-          <p class="text-slate-400 text-sm mt-1">
+          <p class="text-slate-400 text-sm mt-1" id="header-desc">
             Museo interactivo y código fuente original: AndEngine GLES2, Android KitKat/Lollipop, Eclipse y Unity 5.
           </p>
         </div>
       </div>
 
       <div class="flex items-center gap-3 text-xs">
+        <!-- Language Switcher Pill -->
+        <div class="inline-flex items-center bg-slate-900/90 border border-cyan-500/30 rounded-full p-1 gap-1">
+          <button class="lang-btn active px-3 py-1 rounded-full font-bold transition duration-200 text-cyan-300 bg-cyan-500/20" data-lang="es" onclick="setLanguage('es')">
+            🇪🇸 ES
+          </button>
+          <button class="lang-btn px-3 py-1 rounded-full font-bold transition duration-200 text-slate-400 hover:text-white" data-lang="en" onclick="setLanguage('en')">
+            🇬🇧 EN
+          </button>
+        </div>
+
         <a href="https://github.com/JoseMHR/TaosLegacyGames" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-cyan-500/20 text-slate-300 hover:text-white hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/10 transition">
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/80 backdrop-blur-md border border-cyan-500/20 text-slate-300 hover:text-white hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/10 transition">
           <i data-lucide="github" class="w-4 h-4 text-cyan-400"></i>
-          <span>Ver en GitHub</span>
+          <span id="btn-github-text">Ver en GitHub</span>
         </a>
       </div>
     </div>
 
     <!-- Filter chips -->
     <div class="flex items-center gap-2 mt-6 overflow-x-auto pb-2 scrollbar-none" id="filter-container">
-      <button onclick="filterGames('all')" class="filter-btn active px-4 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/25 transition">
+      <button onclick="filterGames('all')" id="filter-btn-all" class="filter-btn active px-4 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/25 transition">
         Todos (7)
       </button>
-      <button onclick="filterGames('2015')" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-cyan-500/30 transition">
+      <button onclick="filterGames('2015')" id="filter-btn-2015" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-cyan-500/30 transition">
         2015: Era Móvil (6)
       </button>
-      <button onclick="filterGames('2016')" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-cyan-500/30 transition">
+      <button onclick="filterGames('2016')" id="filter-btn-2016" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-cyan-500/30 transition">
         2016: Game Jam 3D (1)
       </button>
-      <button onclick="filterGames('andengine')" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-cyan-500/30 transition">
+      <button onclick="filterGames('andengine')" id="filter-btn-andengine" class="filter-btn px-4 py-1.5 rounded-xl text-xs font-medium bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 hover:border-cyan-500/30 transition">
         AndEngine
       </button>
     </div>
@@ -207,7 +217,7 @@
           <!-- Screenshot with frame and subtle vignette -->
           <div class="p-3.5 pb-0">
             <div class="h-48 rounded-xl overflow-hidden bg-slate-950 relative border border-slate-800/80 img-vignette">
-              <img src="./animal-sounds/Screenshot/1.png" alt="Animal Sounds" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+              <img src="./animal-sounds/Screenshot/1.png" alt="Animal Sounds" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy">
               <span class="badge-year absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-xs font-bold z-10">
                 Feb 2015
               </span>
@@ -215,9 +225,9 @@
           </div>
 
           <div class="p-6 pt-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Android Nativo (Java)</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" id="card-1-tag">Android Nativo (Java)</span>
             <h3 class="text-xl font-bold text-white mt-1 group-hover:text-cyan-300 transition">Animal Sounds</h3>
-            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-1-desc">
               Primer juego interactivo para Android: selector sonoro con catálogo de animales, paneles táctiles y menú principal.
             </p>
           </div>
@@ -226,10 +236,10 @@
         <div class="px-6 pb-6 pt-3 flex items-center justify-between border-t border-slate-800/80 text-xs relative z-10">
           <a href="./animal-sounds/Apks%20Demo/AnimalSounds.apk" download
              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold transition">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i> Descargar APK
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> <span class="btn-apk-label">Descargar APK</span>
           </a>
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/animal-sounds" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-            Código <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <span class="btn-code-label">Código</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -239,7 +249,7 @@
         <div>
           <div class="p-3.5 pb-0">
             <div class="h-48 rounded-xl overflow-hidden bg-slate-950 relative border border-slate-800/80 img-vignette">
-              <img src="./destroy-all/Screenshot/a1.png" alt="Destroy All" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+              <img src="./destroy-all/Screenshot/a1.png" alt="Destroy All" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy">
               <span class="badge-year absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-xs font-bold z-10">
                 Feb 2015
               </span>
@@ -247,9 +257,9 @@
           </div>
 
           <div class="p-6 pt-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">AndEngine GLES2</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-blue-400" id="card-2-tag">AndEngine GLES2</span>
             <h3 class="text-xl font-bold text-white mt-1 group-hover:text-blue-300 transition">Destroy-All</h3>
-            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-2-desc">
               Arcade 2D de destrucción táctil con AndEngine: físicas básicas, gestión de sprites y partículas en pantalla.
             </p>
           </div>
@@ -258,10 +268,10 @@
         <div class="px-6 pb-6 pt-3 flex items-center justify-between border-t border-slate-800/80 text-xs relative z-10">
           <a href="./destroy-all/Apks%20Demo/DestruyeTodo.apk" download
              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 font-semibold transition">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i> Descargar APK
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> <span class="btn-apk-label">Descargar APK</span>
           </a>
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/destroy-all" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-            Código <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <span class="btn-code-label">Código</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -271,7 +281,7 @@
         <div>
           <div class="p-3.5 pb-0">
             <div class="h-48 rounded-xl overflow-hidden bg-slate-950 relative border border-slate-800/80 img-vignette">
-              <img src="./lights-out/Screenshot/1.png" alt="Lights Out" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+              <img src="./lights-out/Screenshot/1.png" alt="Lights Out" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy">
               <span class="badge-year absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-xs font-bold z-10">
                 Feb 2015
               </span>
@@ -279,9 +289,9 @@
           </div>
 
           <div class="p-6 pt-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-sky-400">Puzzle Matricial</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-sky-400" id="card-3-tag">Puzzle Matricial</span>
             <h3 class="text-xl font-bold text-white mt-1 group-hover:text-sky-300 transition">Lights Out</h3>
-            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-3-desc">
               Versión móvil del mítico rompecabezas de luces con lógica booleana por cuadrículas y soporte bilingüe (ES / EN).
             </p>
           </div>
@@ -290,10 +300,10 @@
         <div class="px-6 pb-6 pt-3 flex items-center justify-between border-t border-slate-800/80 text-xs relative z-10">
           <a href="./lights-out/Apk%20Demo/LightOut.apk" download
              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 font-semibold transition">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i> Descargar APK
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> <span class="btn-apk-label">Descargar APK</span>
           </a>
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/lights-out" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-            Código <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <span class="btn-code-label">Código</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -303,7 +313,7 @@
         <div>
           <div class="p-3.5 pb-0">
             <div class="h-48 rounded-xl overflow-hidden bg-slate-950 relative border border-slate-800/80 img-vignette">
-              <img src="./run-or-die/Screenshot/1.png" alt="Run Or Die" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+              <img src="./run-or-die/Screenshot/1.png" alt="Run Or Die" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy">
               <span class="badge-year absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-xs font-bold z-10">
                 Feb 2015
               </span>
@@ -311,9 +321,9 @@
           </div>
 
           <div class="p-6 pt-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-teal-400">AndEngine GLES2</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-teal-400" id="card-4-tag">AndEngine GLES2</span>
             <h3 class="text-xl font-bold text-white mt-1 group-hover:text-teal-300 transition">Run-Or-Die</h3>
-            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-4-desc">
               Endless runner con saltos y obstáculos dinámicos, scroll infinito y curva de dificultad progresiva.
             </p>
           </div>
@@ -322,10 +332,10 @@
         <div class="px-6 pb-6 pt-3 flex items-center justify-between border-t border-slate-800/80 text-xs relative z-10">
           <a href="./run-or-die/Apk%20Demo/RunOrDie.apk" download
              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/30 font-semibold transition">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i> Descargar APK
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> <span class="btn-apk-label">Descargar APK</span>
           </a>
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/run-or-die" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-            Código <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <span class="btn-code-label">Código</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -335,7 +345,7 @@
         <div>
           <div class="p-3.5 pb-0">
             <div class="h-48 rounded-xl overflow-hidden bg-slate-950 relative border border-slate-800/80 img-vignette">
-              <img src="./random/Screenshot/1.png" alt="Random Game" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+              <img src="./random/Screenshot/1.png" alt="Random Game" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy">
               <span class="badge-year absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-xs font-bold z-10">
                 Feb 2015
               </span>
@@ -343,9 +353,9 @@
           </div>
 
           <div class="p-6 pt-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Apache Cordova</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400" id="card-5-tag">Apache Cordova</span>
             <h3 class="text-xl font-bold text-white mt-1 group-hover:text-indigo-300 transition">Random</h3>
-            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-5-desc">
               Juego experimental con tecnologías web móviles (HTML5/JS) empaquetadas como APK nativo mediante PhoneGap/Cordova.
             </p>
           </div>
@@ -354,10 +364,10 @@
         <div class="px-6 pb-6 pt-3 flex items-center justify-between border-t border-slate-800/80 text-xs relative z-10">
           <a href="./random/Apk%20Demo/aleatorio.apk" download
              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-semibold transition">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i> Descargar APK
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> <span class="btn-apk-label">Descargar APK</span>
           </a>
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/random" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-            Código <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <span class="btn-code-label">Código</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -367,7 +377,7 @@
         <div>
           <div class="p-3.5 pb-0">
             <div class="h-48 rounded-xl overflow-hidden bg-slate-950 relative border border-slate-800/80 img-vignette">
-              <img src="./visual-adventure/Screenshot/Spanish Version/MainMenu.png" alt="Visual Adventure" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+              <img src="./visual-adventure/Screenshot/Spanish Version/MainMenu.png" alt="Visual Adventure" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy">
               <span class="badge-year absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-xs font-bold z-10">
                 Mar 2015
               </span>
@@ -375,10 +385,10 @@
           </div>
 
           <div class="p-6 pt-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Aventura Gráfica</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" id="card-6-tag">Aventura Gráfica & Novela Visual</span>
             <h3 class="text-xl font-bold text-white mt-1 group-hover:text-cyan-300 transition">Visual Adventure</h3>
-            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-              Motor propio para novelas interactivas: árbol de actores, inventario, mapa interactivo y diálogos ramificados.
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-6-desc">
+              Motor propio para novelas interactivas en Java: árbol de actores, inventario, mapa interactivo y diálogos ramificados.
             </p>
           </div>
         </div>
@@ -386,10 +396,10 @@
         <div class="px-6 pb-6 pt-3 flex items-center justify-between border-t border-slate-800/80 text-xs relative z-10">
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/visual-adventure/Screenshot" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold transition">
-            <i data-lucide="image" class="w-3.5 h-3.5"></i> Galería Capturas
+            <i data-lucide="image" class="w-3.5 h-3.5"></i> <span class="btn-gallery-label">Galería Capturas</span>
           </a>
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/visual-adventure" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition flex items-center gap-1">
-            Código <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <span class="btn-code-label">Código</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -407,10 +417,10 @@
           </div>
 
           <div class="p-6 pt-4">
-            <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">Unity 5 (C# / 3D)</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-blue-400" id="card-7-tag">Unity 5 (C# / 3D)</span>
             <h3 class="text-xl font-bold text-white mt-1 group-hover:text-blue-300 transition">VikingRitual</h3>
-            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-              Videojuego 3D creado para una Game Jam (Global Game Jam 2016): físicas en Unity, animadores Mecanim y temática ritual vikinga.
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-7-desc">
+              Videojuego 3D creado para la Global Game Jam 2016: físicas en Unity, animadores Mecanim y temática ritual vikinga.
             </p>
           </div>
         </div>
@@ -418,7 +428,7 @@
         <div class="px-6 pb-6 pt-3 flex items-center justify-between border-t border-slate-800/80 text-xs relative z-10">
           <span class="text-slate-500 font-mono text-[11px]">Global Game Jam 2016</span>
           <a href="https://github.com/JoseMHR/TaosLegacyGames/tree/main/viking-ritual" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-bold text-blue-400 hover:text-blue-300 transition">
-            Assets & Scripts <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <span id="btn-viking-label">Assets & Scripts</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
       </div>
@@ -431,20 +441,20 @@
 
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
         <div>
-          <div class="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+          <div class="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider" id="flagship-tag">
             <i data-lucide="sparkles" class="w-4 h-4"></i> El Salto Cuántico (2015 ➔ Presente)
           </div>
           <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-2 font-display">
-            TaosGameMaker (Godot 4.3 Engine)
+            Taos Game Maker (Godot 4.3 Engine)
           </h2>
-          <p class="text-slate-300 text-sm mt-2 max-w-2xl leading-relaxed">
-            De aquellos primeros experimentos móviles nació la experiencia para construir un motor de videojuegos completo para JRPGs profesionales en PC y Android.
+          <p class="text-slate-300 text-sm mt-2 max-w-2xl leading-relaxed" id="flagship-desc">
+            De aquellos primeros experimentos móviles nació la base técnica para construir Taos Game Maker: un motor completo de videojuegos para JRPGs tácticos profesionales en PC y Android.
           </p>
         </div>
 
-        <a href="https://github.com/JoseMHR/TaosGameMaker" target="_blank" rel="noopener noreferrer"
+        <a href="https://josemhr.github.io/TaosGameMaker/" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/25 transition hover:scale-105 shrink-0">
-          <span>Ver Motor en Godot 4</span>
+          <span id="flagship-btn">Ver Motor en Godot 4</span>
           <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
       </div>
@@ -454,22 +464,161 @@
   <!-- Footer -->
   <footer class="border-t border-slate-900 bg-slate-950/90 backdrop-blur-md py-8 px-6 mt-12 text-center text-xs text-slate-500">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© 2015 – 2026 Jose Manuel Heredia (Taos). Archivo histórico de gamedev.</p>
+      <p id="footer-copy">© 2015 – 2026 Jose Manuel Heredia (Taos). Archivo histórico de gamedev.</p>
       <div class="flex items-center gap-4">
-        <a href="https://github.com/JoseMHR" target="_blank" class="hover:text-cyan-400 transition">Perfil de GitHub</a>
+        <a href="https://josemhr.github.io/JoseMHR/" target="_blank" class="hover:text-cyan-400 transition" id="footer-link-portfolio">Portfolio & CV</a>
         <span>•</span>
-        <a href="https://github.com/JoseMHR/TaosPersonal" class="hover:text-cyan-400 transition">TaosPersonal</a>
+        <a href="https://josemhr.github.io/TaosGameMaker/" target="_blank" class="hover:text-cyan-400 transition">TaosGameMaker</a>
         <span>•</span>
-        <a href="https://github.com/JoseMHR/TaosGameMaker" class="hover:text-cyan-400 transition">TaosGameMaker</a>
+        <a href="https://josemhr.github.io/TaosPersonal/" target="_blank" class="hover:text-cyan-400 transition">TaosPersonal</a>
+        <span>•</span>
+        <a href="https://github.com/JoseMHR" target="_blank" class="hover:text-cyan-400 transition">GitHub (@JoseMHR)</a>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // 1. Lucide icons
+    // 1. Translations dictionary
+    const translations = {
+      es: {
+        pageTitle: "Taos Legacy Games | Cápsula del Tiempo & Archivo Histórico (2014-2016)",
+        topBanner: "<span class=\"font-bold text-cyan-300\">Cápsula del Tiempo & Archivo Histórico:</span> Este repositorio preserva el código fuente original de mis primeros proyectos y experimentos con videojuegos hace más de una década (2014–2016). Es código antiguo y obsoleto, conservado por mero valor nostálgico para no borrar mis orígenes y recordar dónde empezó todo.",
+        headerDesc: "Museo interactivo y código fuente original: AndEngine GLES2, Android KitKat/Lollipop, Eclipse y Unity 5.",
+        btnGithub: "Ver en GitHub",
+        filterAll: "Todos (7)",
+        filter2015: "2015: Era Móvil (6)",
+        filter2016: "2016: Game Jam 3D (1)",
+        filterAndengine: "AndEngine",
+        apkBtn: "Descargar APK",
+        codeBtn: "Código",
+        galleryBtn: "Galería Capturas",
+        vikingBtn: "Assets & Scripts",
+        card1Tag: "Android Nativo (Java)",
+        card1Desc: "Primer juego interactivo para Android: selector sonoro con catálogo de animales, paneles táctiles y menú principal.",
+        card2Tag: "AndEngine GLES2",
+        card2Desc: "Arcade 2D de destrucción táctil con AndEngine: físicas básicas, gestión de sprites y partículas en pantalla.",
+        card3Tag: "Puzzle Matricial",
+        card3Desc: "Versión móvil del mítico rompecabezas de luces con lógica booleana por cuadrículas y soporte bilingüe (ES / EN).",
+        card4Tag: "AndEngine GLES2",
+        card4Desc: "Endless runner con saltos y obstáculos dinámicos, scroll infinito y curva de dificultad progresiva.",
+        card5Tag: "Apache Cordova",
+        card5Desc: "Juego experimental con tecnologías web móviles (HTML5/JS) empaquetadas como APK nativo mediante PhoneGap/Cordova.",
+        card6Tag: "Aventura Gráfica & Novela Visual",
+        card6Desc: "Motor propio para novelas interactivas en Java: árbol de actores, inventario, mapa interactivo y diálogos ramificados.",
+        card7Tag: "Unity 5 (C# / 3D)",
+        card7Desc: "Videojuego 3D creado para la Global Game Jam 2016: físicas en Unity, animadores Mecanim y temática ritual vikinga.",
+        flagshipTag: "<i data-lucide=\"sparkles\" class=\"w-4 h-4\"></i> El Salto Cuántico (2015 ➔ Presente)",
+        flagshipDesc: "De aquellos primeros experimentos móviles nació la base técnica para construir Taos Game Maker: un motor completo de videojuegos para JRPGs tácticos profesionales en PC y Android.",
+        flagshipBtn: "Ver Motor en Godot 4",
+        footerCopy: "© 2015 – 2026 Jose Manuel Heredia (Taos). Archivo histórico de gamedev.",
+        footerPortfolio: "Portfolio & CV"
+      },
+      en: {
+        pageTitle: "Taos Legacy Games | Time Capsule & Historical Archive (2014-2016)",
+        topBanner: "<span class=\"font-bold text-cyan-300\">Time Capsule & Historical Archive:</span> This repository preserves the original source code of my first game development experiments over a decade ago (2014–2016). This is vintage, obsolete code maintained purely for nostalgic and historical value: honoring my origins as a developer and remembering where it all began.",
+        headerDesc: "Interactive museum and original source code: AndEngine GLES2, Android KitKat/Lollipop, Eclipse, and Unity 5.",
+        btnGithub: "View on GitHub",
+        filterAll: "All (7)",
+        filter2015: "2015: Mobile Era (6)",
+        filter2016: "2016: 3D Game Jam (1)",
+        filterAndengine: "AndEngine",
+        apkBtn: "Download APK",
+        codeBtn: "Code",
+        galleryBtn: "Screenshots",
+        vikingBtn: "Assets & Scripts",
+        card1Tag: "Native Android (Java)",
+        card1Desc: "First interactive game for Android: a soundboard game featuring animal catalogs, touch grid panels, and menu navigation.",
+        card2Tag: "AndEngine GLES2",
+        card2Desc: "2D arcade touch-destruction game built with AndEngine: basic physics, sprite lifecycle management, and particle effects.",
+        card3Tag: "Grid Puzzle",
+        card3Desc: "Mobile adaptation of the classic electronic logic puzzle with boolean grid toggles and bilingual support (ES / EN).",
+        card4Tag: "AndEngine GLES2",
+        card4Desc: "Endless runner featuring dynamic jumps, obstacle collision physics, procedural scrolling, and progressive difficulty.",
+        card5Tag: "Apache Cordova",
+        card5Desc: "Experimental mini-game exploring hybrid mobile web tech (HTML5/JS) packaged into a native Android APK via Cordova.",
+        card6Tag: "Graphic Adventure & Visual Novel",
+        card6Desc: "Custom interactive narrative engine written in pure Java: character state trees, inventory, interactive map, and branching dialogues.",
+        card7Tag: "Unity 5 (C# / 3D)",
+        card7Desc: "3D action game developed during the Global Game Jam 2016: Unity 5 physics, Mecanim state animators, and Norse ritual lore.",
+        flagshipTag: "<i data-lucide=\"sparkles\" class=\"w-4 h-4\"></i> The Quantum Leap (2015 ➔ Present)",
+        flagshipDesc: "From those early mobile experiments grew the foundation to engineer Taos Game Maker: a complete, data-driven framework for professional tactical JRPGs on PC and Android.",
+        flagshipBtn: "Explore Godot 4 Engine",
+        footerCopy: "© 2015 – 2026 Jose Manuel Heredia (Taos). Historical game development archive.",
+        footerPortfolio: "Portfolio & CV"
+      }
+    };
+
+    const urlParam = new URLSearchParams(window.location.search).get('lang');
+    let currentLang = (urlParam === 'es' || urlParam === 'en') ? urlParam : (localStorage.getItem('tlg_lang') || (navigator.language && navigator.language.startsWith('es') ? 'es' : 'en'));
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+      localStorage.setItem('tlg_lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+
+      // Switcher buttons state
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const isActive = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('active', isActive);
+        btn.classList.toggle('bg-cyan-500/20', isActive);
+        btn.classList.toggle('text-cyan-300', isActive);
+        btn.classList.toggle('text-slate-400', !isActive);
+      });
+
+      const t = translations[lang];
+
+      document.title = t.pageTitle;
+      document.getElementById('top-banner-text').innerHTML = t.topBanner;
+      document.getElementById('header-desc').textContent = t.headerDesc;
+      document.getElementById('btn-github-text').textContent = t.btnGithub;
+
+      // Filter chips
+      document.getElementById('filter-btn-all').textContent = t.filterAll;
+      document.getElementById('filter-btn-2015').textContent = t.filter2015;
+      document.getElementById('filter-btn-2016').textContent = t.filter2016;
+      document.getElementById('filter-btn-andengine').textContent = t.filterAndengine;
+
+      // Cards
+      document.getElementById('card-1-tag').textContent = t.card1Tag;
+      document.getElementById('card-1-desc').textContent = t.card1Desc;
+      document.getElementById('card-2-tag').textContent = t.card2Tag;
+      document.getElementById('card-2-desc').textContent = t.card2Desc;
+      document.getElementById('card-3-tag').textContent = t.card3Tag;
+      document.getElementById('card-3-desc').textContent = t.card3Desc;
+      document.getElementById('card-4-tag').textContent = t.card4Tag;
+      document.getElementById('card-4-desc').textContent = t.card4Desc;
+      document.getElementById('card-5-tag').textContent = t.card5Tag;
+      document.getElementById('card-5-desc').textContent = t.card5Desc;
+      document.getElementById('card-6-tag').textContent = t.card6Tag;
+      document.getElementById('card-6-desc').textContent = t.card6Desc;
+      document.getElementById('card-7-tag').textContent = t.card7Tag;
+      document.getElementById('card-7-desc').textContent = t.card7Desc;
+
+      document.querySelectorAll('.btn-apk-label').forEach(el => el.textContent = t.apkBtn);
+      document.querySelectorAll('.btn-code-label').forEach(el => el.textContent = t.codeBtn);
+      document.querySelectorAll('.btn-gallery-label').forEach(el => el.textContent = t.galleryBtn);
+      const vikingBtn = document.getElementById('btn-viking-label');
+      if (vikingBtn) vikingBtn.textContent = t.vikingBtn;
+
+      // Flagship
+      document.getElementById('flagship-tag').innerHTML = t.flagshipTag;
+      document.getElementById('flagship-desc').textContent = t.flagshipDesc;
+      document.getElementById('flagship-btn').textContent = t.flagshipBtn;
+
+      // Footer
+      document.getElementById('footer-copy').textContent = t.footerCopy;
+      document.getElementById('footer-link-portfolio').textContent = t.footerPortfolio;
+
+      // Re-trigger lucide icons
+      lucide.createIcons();
+    }
+
+    // 2. Lucide icons initial
     lucide.createIcons();
 
-    // 2. Category / Year Filtering
+    // 3. Category / Year Filtering
     function filterGames(filter) {
       const cards = document.querySelectorAll('.game-card');
       const buttons = document.querySelectorAll('.filter-btn');
@@ -497,7 +646,7 @@
       });
     }
 
-    // 3. Dynamic Cursor Spotlight on Legacy Cards
+    // 4. Dynamic Cursor Spotlight on Legacy Cards
     document.querySelectorAll('.legacy-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
@@ -508,7 +657,7 @@
       });
     });
 
-    // 4. Interactive Particles & Star Dust Canvas (Cool Blue & Cyan Palette)
+    // 5. Interactive Particles & Star Dust Canvas (Cool Blue & Cyan Palette)
     (function initParticleCanvas() {
       const canvas = document.getElementById('bg-canvas');
       const ctx = canvas.getContext('2d');
@@ -604,6 +753,11 @@
 
       animate();
     })();
+
+    // Initialize with preferred language
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+    });
   </script>
 </body>
 </html>
