@@ -1,10 +1,42 @@
-﻿# OS
-.DS_Store
-Thumbs.db
-desktop.ini
+﻿# ==========================================
+# TaosLegacyGames - Git Ignore
+# ==========================================
 
-# IDEs
+# OS Metadata & Junk
+.DS_Store
+.DS_Store?
+._*
+__.DS_Store
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# IDEs & Editor Configuration
 .vscode/
 .idea/
 *.suo
 *.user
+*.userosv
+*.sln.docstates
+
+# Android & Java Build Artifacts (Eclipse ADT / Ant)
+bin/
+**/bin/
+*.class
+*.dex
+*.ap_
+jarlist.cache
+*.apk.d
+classes/
+**/classes/
+dexedLibs/
+**/dexedLibs/
+
+# Unity Cache & Build Artifacts
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
