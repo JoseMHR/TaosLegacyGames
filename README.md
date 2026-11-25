@@ -32,9 +32,9 @@
 
 ---
 
-## ⚡ El Salto Temporal: 11 Años Después
+## 🚀 La Evolución: 10 Años Después (TaosGameMaker)
 
-El camino iniciado en estos 7 proyectos condujo a lo largo de más de una década de experiencia al desarrollo de mi proyecto más ambicioso:
+El camino iniciado en estos 7 proyectos condujo con los años y la experiencia al desarrollo de mi proyecto actual de videojuegos:
 
 👉 **[TaosGameMaker (Godot 4.3)](https://github.com/JoseMHR/TaosGameMaker)**: Un motor y suite completa para crear JRPGs profesionales en PC y Android, con editores visuales, sistema de bases de datos por JSON, combate por turnos y arquitectura modular.
 
@@ -47,4 +47,4 @@ Puedes explorar el museo virtual de estos juegos con capturas interactivas y fic
 
 ---
 
-*Preservado con nostalgia y orgullo por [Jose Manuel Heredia (Taos)](https://github.com/JoseMHR).*
+*Preservado con nostalgia y orgullo por [José Manuel Heredia (Taos)](https://github.com/JoseMHR).*
