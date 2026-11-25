@@ -7,6 +7,8 @@
 .DS_Store?
 ._*
 __.DS_Store
+_DS_Store
+**/_DS_Store
 [Tt]humbs.db
 [Dd]esktop.ini
 
@@ -17,11 +19,16 @@ __.DS_Store
 *.user
 *.userosv
 *.sln.docstates
+.settings/
+**/.settings/
+_settings/
+**/_settings/
 
-# Android & Java Build Artifacts (Eclipse ADT / Ant)
+# Android & Java Build Artifacts (Eclipse ADT / Ant / Gradle)
 bin/
 **/bin/
 *.class
+**/*.class
 *.dex
 *.ap_
 jarlist.cache
