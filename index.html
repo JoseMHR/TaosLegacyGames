@@ -456,28 +456,99 @@
 
     </div>
 
-    <!-- Evolution Flagship Banner (Cool Blue & Indigo Theme) -->
+    <!-- Current Projects Section (Replaces Old Flagship Banner) -->
     <div class="mt-14 rounded-3xl p-8 bg-gradient-to-r from-blue-950/70 via-slate-900/90 to-cyan-950/70 border border-cyan-500/30 shadow-2xl relative overflow-hidden">
-      <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+      <div class="absolute -right-10 -bottom-10 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
-        <div>
-          <div class="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider" id="flagship-tag">
-            <i data-lucide="sparkles" class="w-4 h-4"></i> La Evolución: 10 Años Después (2015 ➔ 2026)
+      <div class="relative z-10">
+        <!-- Section Header -->
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider" id="current-projects-tag">
+            <i data-lucide="compass" class="w-4 h-4"></i> De los inicios a la actualidad
           </div>
-          <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-2 font-display">
-            Taos Game Maker (Godot 4.3 Engine)
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-2 font-display" id="current-projects-title">
+            Muchos años y proyectos después, hemos llegado al presente
           </h2>
-          <p class="text-slate-300 text-sm mt-2 max-w-2xl leading-relaxed" id="flagship-desc">
-            De aquellos primeros experimentos móviles nació la experiencia técnica para construir Taos Game Maker: un motor y framework completo para JRPGs tácticos en PC y Android sobre Godot 4.
+          <p class="text-slate-300 text-sm mt-2 leading-relaxed" id="current-projects-desc">
+            Han pasado muchos años y muchos proyectos desde aquellos primeros experimentos en 2014–2016. Con toda esa experiencia acumulada, hoy el trabajo continúa en estas creaciones actuales:
           </p>
         </div>
 
-        <a href="https://josemhr.github.io/TaosGameMaker/" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/25 transition hover:scale-105 shrink-0">
-          <span id="flagship-btn">Ver Motor en Godot 4</span>
-          <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
+        <!-- 3 Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          
+          <!-- 1. Engine: Taos Game Maker -->
+          <div class="bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition duration-300">
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30" id="card-tgm-tag">
+                Motor & Framework · Godot 4
+              </span>
+              <h3 class="text-xl font-bold text-white mt-3 font-display" id="card-tgm-title">
+                Taos Game Maker
+              </h3>
+              <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-tgm-desc">
+                Motor data-driven y framework modular para crear JRPGs tácticos y mazmorras en Godot 4, con estudio web visual de más de 45 herramientas y desacoplado mediante JSON.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80">
+              <a href="https://josemhr.github.io/TaosGameMaker/" target="_blank" rel="noopener noreferrer"
+                 class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-slate-950 font-bold text-xs shadow-md transition hover:scale-[1.02]">
+                <span id="card-tgm-btn">Ver Motor en Godot 4</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. Game: Echoes of Truth -->
+          <div class="bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition duration-300">
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-blue-500/15 text-blue-300 border border-blue-500/30" id="card-game-tag">
+                Videojuego JRPG Completo
+              </span>
+              <h3 class="text-xl font-bold text-white mt-3 font-display" id="card-game-title">
+                Echoes of Truth (Ecos de la Verdad)
+              </h3>
+              <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-game-desc">
+                RPG táctico por turnos y crawler en primera persona desarrollado al 100% con Taos Game Maker. Disponible oficialmente en móvil y ordenadores:
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-col gap-2">
+              <a href="https://play.google.com/store/apps/details?id=com.taosworld.ecosdelaverdad" target="_blank" rel="noopener noreferrer"
+                 class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition hover:scale-[1.02]">
+                <span id="card-game-playstore">📱 Google Play Store (Android)</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+              <a href="https://taosworld.itch.io/echoesoftruth" target="_blank" rel="noopener noreferrer"
+                 class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-xs transition">
+                <span id="card-game-itch">🎮 Jugar en itch.io (PC / Mac)</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. Books: La Saga Lázaro -->
+          <div class="bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition duration-300">
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30" id="card-books-tag">
+                Universo Literario de Fantasía
+              </span>
+              <h3 class="text-xl font-bold text-white mt-3 font-display" id="card-books-title">
+                La Saga Lázaro
+              </h3>
+              <p class="text-slate-400 text-sm mt-2 leading-relaxed" id="card-books-desc">
+                Saga de novelas de fantasía oscura y ciencia ficción que conforman la mitología, deidades y lore compartido con los videojuegos.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800/80">
+              <a href="https://josemhr.github.io/SagaLazaro/" target="_blank" rel="noopener noreferrer"
+                 class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold text-xs shadow-md transition hover:scale-[1.02]">
+                <span id="card-books-btn">📚 Web Oficial de los Libros</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </main>
@@ -490,6 +561,8 @@
         <a href="https://josemhr.github.io/JoseMHR/" target="_blank" class="hover:text-cyan-400 transition" id="footer-link-portfolio">Portfolio & CV</a>
         <span>•</span>
         <a href="https://josemhr.github.io/TaosGameMaker/" target="_blank" class="hover:text-cyan-400 transition">TaosGameMaker</a>
+        <span>•</span>
+        <a href="https://josemhr.github.io/SagaLazaro/" target="_blank" class="hover:text-cyan-400 transition" id="footer-link-sagalazaro">Saga Lázaro</a>
         <span>•</span>
         <a href="https://github.com/JoseMHR" target="_blank" class="hover:text-cyan-400 transition">GitHub (@JoseMHR)</a>
       </div>
@@ -585,11 +658,25 @@
         card6Desc: "Motor propio para novelas interactivas en Java: árbol de actores, inventario, mapa interactivo y diálogos ramificados.",
         card7Tag: "Unity 5 (C# / 3D)",
         card7Desc: "Videojuego 3D creado para la Global Game Jam 2016: físicas en Unity, animadores Mecanim y temática ritual vikinga.",
-        flagshipTag: "<i data-lucide=\"sparkles\" class=\"w-4 h-4\"></i> El Salto Cuántico (2015 ➔ Presente)",
-        flagshipDesc: "De aquellos primeros experimentos móviles nació la experiencia técnica para construir Taos Game Maker: un motor y framework completo para JRPGs tácticos en PC y Android sobre Godot 4.",
-        flagshipBtn: "Ver Motor en Godot 4",
+        currentProjectsTag: "<i data-lucide=\"compass\" class=\"w-4 h-4\"></i> De los inicios a la actualidad",
+        currentProjectsTitle: "Muchos años y proyectos después, hemos llegado al presente",
+        currentProjectsDesc: "Han pasado muchos años y muchos proyectos desde aquellos primeros experimentos en 2014–2016. Con toda esa experiencia acumulada, hoy el trabajo continúa en estas creaciones actuales:",
+        cardTgmTag: "Motor & Framework · Godot 4",
+        cardTgmTitle: "Taos Game Maker",
+        cardTgmDesc: "Motor data-driven y framework modular para crear JRPGs tácticos y mazmorras en Godot 4, con estudio web visual de más de 45 herramientas y desacoplado mediante JSON.",
+        cardTgmBtn: "Ver Motor en Godot 4",
+        cardGameTag: "Videojuego JRPG Completo",
+        cardGameTitle: "Echoes of Truth (Ecos de la Verdad)",
+        cardGameDesc: "RPG táctico por turnos y crawler en primera persona desarrollado al 100% con Taos Game Maker. Disponible oficialmente en móvil y ordenadores:",
+        cardGamePlayStore: "📱 Google Play Store (Android)",
+        cardGameItch: "🎮 Jugar en itch.io (PC / Mac)",
+        cardBooksTag: "Universo Literario de Fantasía",
+        cardBooksTitle: "La Saga Lázaro",
+        cardBooksDesc: "Saga de novelas de fantasía oscura y ciencia ficción que conforman la mitología, deidades y lore compartido con los videojuegos.",
+        cardBooksBtn: "📚 Web Oficial de los Libros",
         footerCopy: "© 2015 – 2026 Jose Manuel Heredia (Taos). Archivo histórico de gamedev.",
-        footerPortfolio: "Portfolio & CV"
+        footerPortfolio: "Portfolio & CV",
+        footerSagaLazaro: "Saga Lázaro"
       },
       en: {
         pageTitle: "Taos Legacy Games | Time Capsule & Historical Archive (2014-2016)",
@@ -619,13 +706,27 @@
         card7Tag: "Unity 5 (C# / 3D)",
         card7Desc: "3D action game developed during the Global Game Jam 2016: Unity 5 physics, Mecanim state animators, and Norse ritual lore.",
         badgeDate7: "Jan 2016",
-        flagshipTag: "<i data-lucide=\"sparkles\" class=\"w-4 h-4\"></i> The Evolution: A Decade Later (2015 ➔ 2026)",
-        flagshipDesc: "From those early mobile experiments came the technical experience to engineer Taos Game Maker: a complete game development framework for tactical JRPGs on PC and Android with Godot 4.",
-        flagshipBtn: "Explore Godot 4 Engine",
+        currentProjectsTag: "<i data-lucide=\"compass\" class=\"w-4 h-4\"></i> From the Early Days to the Present",
+        currentProjectsTitle: "Many years and projects later, we have arrived at the present",
+        currentProjectsDesc: "Many years and projects have passed since those first experiments in 2014–2016. Building upon that journey, here are the current projects I am actively creating:",
+        cardTgmTag: "Engine & Framework · Godot 4",
+        cardTgmTitle: "Taos Game Maker",
+        cardTgmDesc: "Data-driven engine and modular framework to build tactical JRPGs in Godot 4, with a visual web studio of 45+ tools decoupled via clean JSON.",
+        cardTgmBtn: "Explore Godot 4 Engine",
+        cardGameTag: "Full JRPG Demonstration Game",
+        cardGameTitle: "Echoes of Truth (Ecos de la Verdad)",
+        cardGameDesc: "Full tactical JRPG and first-person dungeon crawler built 100% with Taos Game Maker. Available on Google Play Store and itch.io for PC & Mac:",
+        cardGamePlayStore: "📱 Google Play Store (Android)",
+        cardGameItch: "🎮 Play on itch.io (PC / Mac)",
+        cardBooksTag: "Dark Fantasy Literary Universe",
+        cardBooksTitle: "The Lazarus Saga",
+        cardBooksDesc: "Dark fantasy and sci-fi novel series forming the mythological foundation, ancient spheres, and celestial lore behind the game universe.",
+        cardBooksBtn: "📚 Official Book Website",
         footerCopy: "© 2015 – 2026 José Manuel Heredia (Taos). Historical game development archive.",
         lbApk: "Download APK",
         lbCode: "View Source on GitHub",
-        footerPortfolio: "Portfolio & CV"
+        footerPortfolio: "Portfolio & CV",
+        footerSagaLazaro: "The Lazarus Saga"
       }
     };
 
@@ -688,14 +789,32 @@
       const vikingBtn = document.getElementById('btn-viking-label');
       if (vikingBtn) vikingBtn.textContent = t.vikingBtn;
 
-      // Flagship
-      document.getElementById('flagship-tag').innerHTML = t.flagshipTag;
-      document.getElementById('flagship-desc').textContent = t.flagshipDesc;
-      document.getElementById('flagship-btn').textContent = t.flagshipBtn;
+      // Current Projects Section
+      document.getElementById('current-projects-tag').innerHTML = t.currentProjectsTag;
+      document.getElementById('current-projects-title').textContent = t.currentProjectsTitle;
+      document.getElementById('current-projects-desc').textContent = t.currentProjectsDesc;
+
+      document.getElementById('card-tgm-tag').textContent = t.cardTgmTag;
+      document.getElementById('card-tgm-title').textContent = t.cardTgmTitle;
+      document.getElementById('card-tgm-desc').textContent = t.cardTgmDesc;
+      document.getElementById('card-tgm-btn').textContent = t.cardTgmBtn;
+
+      document.getElementById('card-game-tag').textContent = t.cardGameTag;
+      document.getElementById('card-game-title').textContent = t.cardGameTitle;
+      document.getElementById('card-game-desc').textContent = t.cardGameDesc;
+      document.getElementById('card-game-playstore').textContent = t.cardGamePlayStore;
+      document.getElementById('card-game-itch').textContent = t.cardGameItch;
+
+      document.getElementById('card-books-tag').textContent = t.cardBooksTag;
+      document.getElementById('card-books-title').textContent = t.cardBooksTitle;
+      document.getElementById('card-books-desc').textContent = t.cardBooksDesc;
+      document.getElementById('card-books-btn').textContent = t.cardBooksBtn;
 
       // Footer
       document.getElementById('footer-copy').textContent = t.footerCopy;
       document.getElementById('footer-link-portfolio').textContent = t.footerPortfolio;
+      const fSaga = document.getElementById('footer-link-sagalazaro');
+      if (fSaga && t.footerSagaLazaro) fSaga.textContent = t.footerSagaLazaro;
 
       // Re-trigger lucide icons
       lucide.createIcons();

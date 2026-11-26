@@ -32,11 +32,15 @@
 
 ---
 
-## 🚀 La Evolución: 10 Años Después (TaosGameMaker)
+## 🚀 De aquellos comienzos al presente: Proyectos Actuales
 
-El camino iniciado en estos 7 proyectos condujo con los años y la experiencia al desarrollo de mi proyecto actual de videojuegos:
+Han pasado muchos años y muchos proyectos desde aquellos primeros experimentos entre 2014 y 2016. La experiencia técnica acumulada en ese camino ha dado vida a los proyectos actuales:
 
-👉 **[TaosGameMaker (Godot 4.3)](https://github.com/JoseMHR/TaosGameMaker)**: Un motor y suite completa para crear JRPGs profesionales en PC y Android, con editores visuales, sistema de bases de datos por JSON, combate por turnos y arquitectura modular.
+- **[Taos Game Maker (Godot 4)](https://josemhr.github.io/TaosGameMaker/)**: Motor y framework data-driven completo para desarrollar JRPGs tácticos y mazmorras en Godot 4 con suite web visual desacoplada.
+- **[Echoes of Truth (Ecos de la Verdad)](https://taosworld.itch.io/echoesoftruth)**: Videojuego JRPG táctico y crawler en primera persona desarrollado al 100% con Taos Game Maker.
+  - 📱 [Descargar en Google Play Store (Android)](https://play.google.com/store/apps/details?id=com.taosworld.ecosdelaverdad)
+  - 🎮 [Jugar en itch.io (PC / Windows / Mac / Linux)](https://taosworld.itch.io/echoesoftruth)
+- **[La Saga Lázaro](https://josemhr.github.io/SagaLazaro/)**: Universo literario de novelas de fantasía oscura y ciencia ficción que conforma el trasfondo mitológico y lore compartido.
 
 ---
 
